@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شركة الوسيط للسفريات</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap');
+        
+        :root {
+            --primary-color: #86AF59;
+            --gold-color: #d3c9c9;
+            --whatsapp-color: #25D366;
+            --facebook-color: #3b5998;
+            --instagram-color: #E1306C;
+            --phone-color: #34b834;
+            --title-font: 'Almarai', sans-serif;
+            --text-font: 'Tajawal', sans-serif;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: url('IMG-20250504-WA0003.jpg') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: 20px;
+            font-family: var(--text-font);
+        }
+        
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(10, 19, 12, 0.507);
+            z-index: 0;
+        }
+        
+        .page-container {
+            width: 100%;
+            max-width: 500px;
+            background-color: rgba(231, 229, 229, 0.685);
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(23, 167, 78, 0.644);
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgb(235, 232, 232);
+        }
+        
+        .header {
+            padding: 35px 25px;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #86AF59 100%);
+            color: rgba(209, 213, 224, 0.774);
+            border-bottom: 3px solid var(--gold-color);
+        }
+        
+        .logo {
+            width: 110px;
+            height: 110px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--gold-color);
+            box-shadow: 0 5px 20px rgb(255, 250, 250);
+        }
+        
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .company-name {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            font-family: var(--title-font);
+            letter-spacing: 1px;
+            text-shadow: 0 2px 5px rgba(252, 252, 252, 0.822);
+        }
+        
+        .company-slogan {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+        
+        .contact-list {
+            padding: 35px 25px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            padding: 18px 20px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0 5px 15px rgba(52, 117, 49, 0.616);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid rgba(79, 126, 76, 0.342);
+        }
+        
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(46, 91, 175, 0.781);
+        }
+        
+        .contact-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.6rem;
+            color: rgb(255, 255, 255);
+            margin-left: 18px;
+            flex-shrink: 0;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .contact-info {
+            flex-grow: 1;
+        }
+        
+        .contact-title {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            font-size: 1.25rem;
+            font-family: var(--title-font);
+        }
+        
+        .contact-desc {
+            font-size: 0.95rem;
+            color: #555;
+            letter-spacing: 0.3px;
+        }
+        
+        .whatsapp .contact-icon { background: var(--whatsapp-color); }
+        .facebook .contact-icon { background: var(--facebook-color); }
+        .instagram .contact-icon { background: var(--instagram-color); }
+        .phone .contact-icon { background: var(--phone-color); }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f8f8;
+            font-size: 0.9rem;
+            color: #555;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .footer p {
+            font-weight: 500;
+        }
+        
+        @media (max-width: 600px) {
+            .company-name {
+                font-size: 1.7rem;
+            }
+            
+            .contact-item {
+                padding: 15px;
+            }
+            
+            .contact-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+            
+            .contact-title {
+                font-size: 1.15rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <div class="header">
+            <div class="logo">
+                <img src="IMG-20250504-WA0004.jpg" alt="">
+            </div>
+            <h1 class="company-name">وكالة الوسيط اون لاين </h1>
+            <p class="company-slogan">للسفريات والسياحة وخدمات الحج والعمرة</p>
+        </div>
+        
+        <div class="contact-list">
+            <!-- واتساب -->
+            <div class="contact-item whatsapp" onclick="window.open(' https://wa.me/+967783183888 ')">
+                <div class="contact-icon">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-title">واتساب</div>
+                    <div class="contact-desc">تواصل معنا عبر الواتساب</div>
+                </div>
+            </div>
+            
+            <!-- فيسبوك -->
+            <div class="contact-item facebook" onclick="window.open('https://www.facebook.com/share/1DZh4Gphnk/')">
+                <div class="contact-icon">
+                    <i class="fab fa-facebook-f"></i>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-title">فيسبوك</div>
+                    <div class="contact-desc">تابعنا على فيسبوك</div>
+                </div>
+            </div>
+            
+            <!-- إنستجرام -->
+            <div class="contact-item instagram" onclick="window.open('https://instagram.com/al.waseet.on.line.25')">
+                <div class="contact-icon">
+                    <i class="fab fa-instagram"></i>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-title">إنستجرام</div>
+                    <div class="contact-desc">تابعنا على إنستجرام</div>
+                </div>
+            </div>
+            
+            <!-- هاتف -->
+            <div class="contact-item phone" onclick="window.location.href='tel:+967783183888'">
+                <div class="contact-icon">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-title">اتصل بنا</div>
+                    <div class="contact-desc">   </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>25 عام من التميز والابداع</p>
+        </div>
+    </div>
+</body>
+</html>
